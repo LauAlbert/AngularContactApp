@@ -21,4 +21,8 @@ export class ContactListComponent implements OnInit {
       .subscribe(contacts => this.contacts = contacts);
   }
 
+  onDelete(contact: Person): void {
+    this.personService.deleteContact(contact);
+    console.log(contact);
+  }
 }
