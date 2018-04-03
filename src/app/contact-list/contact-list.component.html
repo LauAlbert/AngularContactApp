@@ -24,7 +24,7 @@
                 <td>{{contact.lastName}}</td>
                 <td>
                   <div class="float-right">
-                      <button class="btn btn-primary">Edit</button>
+                      <button class="btn btn-primary" routerLink="/contact-list/{{contact.id}}">Edit</button>
                       <button class="btn btn-danger" (click)="onDelete(contact)">Delete</button>
                   </div>
                 </td>

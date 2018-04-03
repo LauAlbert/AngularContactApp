@@ -1,0 +1,15 @@
+<div class="container" *ngIf="contact">
+    <h4>Edit Contact</h4>
+    <br>
+    <form>
+      <div class="form-group">
+        <label for="First">First Name</label>
+        <input type="text" id="First" class="form-control" placeholder="{{contact.firstName}}">
+      </div>
+      <div class="form-group">
+          <label for="Last">Last Name</label>
+          <input type="text" id="Last" class="form-control" placeholder="{{contact.lastName}}">
+        </div>
+    </form>
+
+</div>

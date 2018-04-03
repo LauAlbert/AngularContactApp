@@ -8,6 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { ContactComponent } from './contact/contact.component';
 import { ContactListComponent } from './contact-list/contact-list.component';
 import { AppRoutingModule } from './/app-routing.module';
+import { ContactEditComponent } from './contact-edit/contact-edit.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { AppRoutingModule } from './/app-routing.module';
     AppComponent,
     HeaderComponent,
     ContactComponent,
-    ContactListComponent
+    ContactListComponent,
+    ContactEditComponent
   ],
   imports: [
     BrowserModule,

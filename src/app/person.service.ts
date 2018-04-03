@@ -13,6 +13,10 @@ export class PersonService {
     return of(PERSONDATABASE);
   }
 
+  getContact(id: number): Observable<Person> {
+    return of(PERSONDATABASE[id]);
+  }
+
   deleteContact(item: Person)
   {
     const index = PERSONDATABASE.indexOf(item);
