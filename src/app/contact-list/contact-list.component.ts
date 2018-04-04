@@ -31,16 +31,16 @@ export class ContactListComponent implements OnInit {
   onDelete(contact: Person): void {
     this.personService.deleteContact(contact);
     console.log(contact);
+    this.updateList();
   }
 
   updateList(): void {
     this.currentPage = 1;
     this.currentPageContacts = this.contacts.slice((this.currentPage - 1) * this.pageSize, this.currentPage * this.pageSize);
-    this.maxPage = Math.ceil(this.contacts.length / this.pageSize); 
+    this.maxPage = Math.ceil(this.contacts.length / this.pageSize);
   }
   changePage(page: number): void {
-    if (page > 0 && page < this.maxPage + 1)
-    {
+    if (page > 0 && page < this.maxPage + 1) {
       this.currentPage = page;
       this.currentPageContacts = this.contacts.slice((this.currentPage - 1) * this.pageSize, this.currentPage * this.pageSize);
     }

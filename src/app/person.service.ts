@@ -14,7 +14,7 @@ export class PersonService {
   }
 
   getContact(id: number): Observable<Person> {
-    return of(PERSONDATABASE[id]);
+    return of(PERSONDATABASE.find(person => person.id === id));
   }
 
   deleteContact(item: Person) {

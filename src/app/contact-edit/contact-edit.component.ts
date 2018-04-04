@@ -21,7 +21,7 @@ export class ContactEditComponent implements OnInit {
   getContact(): void {
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
-      this.personService.getContact(+id - 1)
+      this.personService.getContact(+id)
         .subscribe(contact => this.contact = contact);
     } else {
       this.contact = new Person();
