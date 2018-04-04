@@ -2,6 +2,8 @@
     <div class="row">
       <div class="col-3 bg-dark text-light height">
         <h4>Filter</h4>
+        <label for="pageSize">Page Size</label>
+        <input type="number" min="1" id="pageSize" [(ngModel)]="pageSize" (change)="updateList()">
       </div>
       <div class="col-9">
         <h4>Contact</h4>
@@ -18,7 +20,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let contact of contacts">
+              <tr *ngFor="let contact of currentPageContacts">
                 <td>{{contact.id}}</td>
                 <td>{{contact.firstName}}</td>
                 <td>{{contact.lastName}}</td>
@@ -31,6 +33,15 @@
               </tr>
             </tbody>
           </table>
+          <nav>
+              <ul class="pagination">
+                <li class="page-item"><a class="page-link" (click)="changePage(1)">First</a></li>
+                <li class="page-item" *ngIf="isFirstPage()"><a class="page-link" (click)="changePage(currentPage-1)">{{currentPage - 1}}</a></li>
+                <li class="page-item"><a class="page-link">{{currentPage}}</a></li>
+                <li class="page-item" *ngIf="isLastPage()"><a class="page-link" (click)="changePage(currentPage+1)">{{currentPage + 1}}</a></li>
+                <li class="page-item"><a class="page-link" (click)="changePage(maxPage)">Last</a></li>
+              </ul>
+          </nav>
         </div>
       </div>
     </div>
