@@ -17,9 +17,13 @@ export class PersonService {
     return of(PERSONDATABASE[id]);
   }
 
-  deleteContact(item: Person)
-  {
+  deleteContact(item: Person) {
     const index = PERSONDATABASE.indexOf(item);
     PERSONDATABASE.splice(index, 1);
+  }
+
+  postContact(item: Person) {
+    item.id = Math.max(...PERSONDATABASE.map(person => person.id)) + 1;
+    PERSONDATABASE.push(item);
   }
 }
